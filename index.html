@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home screen</title>
+    <style>
+      * {
+        color: #f6f1f1;
+      }
+      #container {
+        display: flex;
+        width: 100px;
+        margin: auto;
+        flex-wrap: wrap;
+        height: 150px;
+        align-items: center;
+        justify-content: center;
+      }
+      a {
+        flex-basis: 100%;
+        height: 25px;
+        display: block;
+        margin: auto;
+      }
+      span {
+        display: block;
+        margin: auto;
+        width: 300px;
+        text-align: center;
+        margin-top: 250px;
+        margin-bottom: 10px;
+      }
+      form {
+        display: block;
+        margin: auto;
+        text-align: center;
+        margin-top: 20px;
+      }
+      body {
+        background-color: #6f92a3;
+      }
+      button {
+        width: 100px;
+        cursor: pointer;
+        margin: 0;
+        margin-top: 10px;
+        height: 50px;
+        background-color: #8ea7e9;
+        border: 0;
+      }
+      button:active {
+        background-color: #606f99;
+      }
+    </style>
+  </head>
+  <body>
+    <span>What would you like to play?</span>
+    <div id="container">
+      <a href="multiplayer.html"><button class="player">Multiplayer</button></a>
+      <a href="singleplayer.html"
+        ><button class="player">Singleplayer</button></a
+      >
+    </div>
+  </body>
+</html>
