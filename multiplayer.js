@@ -12,6 +12,7 @@ function player_turn(a) {
   //player 1
   if (player1.turn == player2.turn) {
     document.getElementById(a).innerHTML = "X";
+    document.getElementById(a).style.color = "red";
     player1.turn++;
     document.getElementById("header").innerHTML = "Player2 turn";
     cells[a] = "X";
@@ -27,6 +28,7 @@ function player_turn(a) {
   //player 2
   else {
     document.getElementById(a).innerHTML = "O";
+    document.getElementById(a).style.color = "blue";
     player2.turn++;
     document.getElementById("header").innerHTML = "Player1 turn";
     cells[a] = "O";

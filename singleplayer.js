@@ -13,6 +13,7 @@ comp = new player();
 player1 = new player();
 function player_turn(id) {
   document.getElementById(id).innerHTML = "X";
+  document.getElementById(id).style.color = "red";
   document.getElementById(id).style.cursor = "initial";
   document.getElementById(id).setAttribute("disabled", "");
   let row;
@@ -52,6 +53,7 @@ function player_turn(id) {
       }
     } while (document.getElementById(compid).innerHTML != "");
     document.getElementById(compid).innerHTML = "O";
+    document.getElementById(compid).style.color = "blue";
     document.getElementById(compid).style.cursor = "initial";
     document.getElementById(compid).setAttribute("disabled", "");
     gamechecker[comprow - 1][compcol - 1] = "O";
