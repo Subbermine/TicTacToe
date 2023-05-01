@@ -1,6 +1,13 @@
 body {
   color: #f6f1f1;
   background-color: #6f92a3;
+  font-family: Helvetica, sans-serif;
+}
+:root {
+  --all-shadow:
+    0 0 1px 4px #e0f7fa,
+    0 0 4px 6px #bc13fe,
+    0 0 1px 0.4px #bc13fe;
 }
 #container {
   width: 375px;
@@ -10,9 +17,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  border: 5px solid black;
   padding: 10px;
-  background-color: white;
 }
 .element:active{
   background-color: rgb(104, 103, 103);
@@ -38,13 +43,16 @@ div .element {
   0 0 42px #0fa,
   0 0 82px #0fa,
   0 0 92px #0fa;
-  }
+  box-shadow: var(--all-shadow);
+
+}
 .element:nth-child(5){
   border: 2px solid white;
 }
 .element:nth-child(2),.element:nth-child(8){
   border-left: 2px solid white;
   border-right: 2px solid white;
+  
 }
 .element:nth-child(4),.element:nth-child(6){
   border-top: 2px solid white;
