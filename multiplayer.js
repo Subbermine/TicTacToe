@@ -15,7 +15,6 @@ function player_turn(a) {
     document.getElementById(a).innerHTML = "X";
     document.getElementById(a).style.color = "red";
     player1.turn++;
-    document.getElementById("header").innerHTML = "Player2 turn";
     cells[a] = "X";
     if (player1.turn >= 3) player1.won = decider("X");
     document
@@ -31,7 +30,6 @@ function player_turn(a) {
     document.getElementById(a).innerHTML = "O";
     document.getElementById(a).style.color = "blue";
     player2.turn++;
-    document.getElementById("header").innerHTML = "Player1 turn";
     cells[a] = "O";
     if (player2.turn >= 3) player2.won = decider("O");
     document.getElementById("body").style.backgroundColor = "#6f92a3";
@@ -67,8 +65,11 @@ function decider(str) {
 }
 function won(s) {
   if (s == "Player1") {
+    document.getElementById(s).innerHTML = `${s}: ${++player1.gameswon}`;
   }
-  document.getElementById("header").innerHTML = `${s} won!`;
+  if (s == "Player2") {
+    document.getElementById(s).innerHTML = `${s}: ${++player2.gameswon}`;
+  }
   for (let index = 0; index < 9; index++) {
     document.getElementById(index).disabled = true;
     document.getElementById(index).style.cursor = "initial";
@@ -85,5 +86,9 @@ function playagain() {
     document.getElementById(index).innerHTML = "";
     cells.length = 0;
   }
+  player1.turn = 0;
+  player2.turn = 0;
+  player1.won = false;
+  player2.won = false;
   document.getElementById("play").style.visibility = "hidden";
 }

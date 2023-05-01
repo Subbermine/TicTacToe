@@ -47,7 +47,11 @@ div .element {
 #header {
   color: black;
   text-align: center;
+  display: flex;
   margin: 50px;
+}
+section{
+  width: 50%;;
 }
 #play {
   cursor: pointer;
