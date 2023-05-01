@@ -2,6 +2,7 @@ class player {
   constructor() {
     this.won = false;
     this.turn = 0;
+    this.gameswon = 0;
   }
 }
 let player1 = new player();
@@ -65,9 +66,11 @@ function decider(str) {
     return true;
 }
 function won(s) {
+  if (s == "Player1") {
+  }
   document.getElementById("header").innerHTML = `${s} won!`;
   for (let index = 0; index < 9; index++) {
-    document.getElementById(index).setAttribute("disabled", "");
+    document.getElementById(index).disabled = true;
     document.getElementById(index).style.cursor = "initial";
     document
       .getElementById("play")
@@ -76,5 +79,11 @@ function won(s) {
   document.getElementById("play").style.visibility = "visible";
 }
 function playagain() {
-  window.location.reload();
+  for (let index = 0; index < 9; index++) {
+    document.getElementById(index).disabled = false;
+    document.getElementById(index).style.cursor = "pointer";
+    document.getElementById(index).innerHTML = "";
+    cells.length = 0;
+  }
+  document.getElementById("play").style.visibility = "hidden";
 }
