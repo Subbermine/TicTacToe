@@ -14,6 +14,8 @@ function player_turn(a) {
   if (player1.turn == player2.turn) {
     document.getElementById(a).innerHTML = "X";
     document.getElementById(a).style.color = "red";
+    document.getElementById(a).style.textShadow =
+      "0 0 7px #f00,0 0 10px #f00,0 0 21px #f00,0 0 42px #fa0,0 0 82px #fa0,0 0 92px #fa0";
     player1.turn++;
     cells[a] = "X";
     if (player1.turn >= 3) player1.won = decider("X");
@@ -29,6 +31,8 @@ function player_turn(a) {
   else {
     document.getElementById(a).innerHTML = "O";
     document.getElementById(a).style.color = "blue";
+    document.getElementById(a).style.textShadow =
+      "0 0 7px #00f,0 0 10px #00f,0 0 21px #00f,0 0 42px #0fa,0 0 82px #0fa,0 0 92px #0fa";
     player2.turn++;
     cells[a] = "O";
     if (player2.turn >= 3) player2.won = decider("O");
@@ -42,7 +46,6 @@ function player_turn(a) {
     player1.won = decider("X");
     if (player1.won) won("Player1");
     else {
-      document.getElementById("header").innerHTML = "Draw!";
       document.getElementById("play").style.visibility = "visible";
       document
         .getElementById("play")

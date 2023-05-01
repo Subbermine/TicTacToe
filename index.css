@@ -15,11 +15,10 @@ body {
   background-color: white;
 }
 .element:active{
-  background-color: white;
+  background-color: rgb(104, 103, 103);
 }
 .element:disabled:active{
-  background-color: white;
-  
+  background-color: black;
 }
 div .element {
   height: 100px;
@@ -30,19 +29,26 @@ div .element {
   font-size: 460%;
   padding: 0;
   font-weight: bolder;
-  background-color: white;
+  background-color: black;
   cursor: pointer;
-}
+  text-shadow:
+  0 0 7px #00f,
+  0 0 10px #00f,
+  0 0 21px #00f,
+  0 0 42px #0fa,
+  0 0 82px #0fa,
+  0 0 92px #0fa;
+  }
 .element:nth-child(5){
-  border: 2px solid black;
+  border: 2px solid white;
 }
 .element:nth-child(2),.element:nth-child(8){
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
 }
 .element:nth-child(4),.element:nth-child(6){
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
 }
 #header {
   color: black;
@@ -51,7 +57,14 @@ div .element {
   margin: 50px;
 }
 section{
-  width: 50%;;
+  width: 50%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 20px;
+}
+#Player1{
+  border-right: 2px solid black;
+
 }
 #play {
   cursor: pointer;
