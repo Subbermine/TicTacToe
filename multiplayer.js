@@ -54,17 +54,42 @@ function player_turn(a) {
   }
 }
 function decider(str) {
-  if (
-    (cells[0] == str && cells[1] == str && cells[2] == str) ||
-    (cells[3] == str && cells[4] == str && cells[5] == str) ||
-    (cells[6] == str && cells[7] == str && cells[8] == str) ||
-    (cells[0] == str && cells[3] == str && cells[6] == str) ||
-    (cells[1] == str && cells[4] == str && cells[7] == str) ||
-    (cells[2] == str && cells[5] == str && cells[8] == str) ||
-    (cells[0] == str && cells[4] == str && cells[8] == str) ||
-    (cells[2] == str && cells[4] == str && cells[6] == str)
-  )
+  if (cells[0] == str && cells[1] == str && cells[2] == str) {
+    document.getElementById("imag").style.display = "inline-block";
+    document.getElementById("imag").style.top = "50px";
     return true;
+  } else if (cells[3] == str && cells[4] == str && cells[5] == str) {
+    document.getElementById("imag").style.top = "170px";
+    document.getElementById("imag").style.display = "inline-block";
+    return true;
+  } else if (cells[6] == str && cells[7] == str && cells[8] == str) {
+    document.getElementById("imag").style.top = "290px";
+    document.getElementById("imag").style.display = "inline-block";
+    return true;
+  } else if (cells[0] == str && cells[3] == str && cells[6] == str) {
+    document.getElementById("imag").style.transform = "rotate(90deg)";
+    document.getElementById("imag").style.left = "-115px";
+    document.getElementById("imag").style.display = "inline-block";
+    return true;
+  } else if (cells[1] == str && cells[4] == str && cells[7] == str) {
+    document.getElementById("imag").style.transform = "rotate(90deg)";
+    document.getElementById("imag").style.left = "10px";
+    document.getElementById("imag").style.display = "inline-block";
+    return true;
+  } else if (cells[2] == str && cells[5] == str && cells[8] == str) {
+    document.getElementById("imag").style.transform = "rotate(90deg)";
+    document.getElementById("imag").style.left = "135px";
+    document.getElementById("imag").style.display = "inline-block";
+    return true;
+  } else if (cells[0] == str && cells[4] == str && cells[8] == str) {
+    document.getElementById("imag").style.transform = "rotate(45deg)";
+    document.getElementById("imag").style.display = "inline-block";
+    return true;
+  } else if (cells[2] == str && cells[4] == str && cells[6] == str) {
+    document.getElementById("imag").style.transform = "rotate(135deg)";
+    document.getElementById("imag").style.display = "inline-block";
+    return true;
+  }
 }
 function won(s) {
   if (s == "Player1") {
