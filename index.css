@@ -14,10 +14,17 @@ body {
   padding: 10px;
   position: relative;
 }
+#invis{
+  overflow: hidden;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+}
 img{
   position: absolute;
   width: 400px;
-  left:-15px;
+  left:-25px;
+  top:170px;
   display: none;
 }
 .element:active{

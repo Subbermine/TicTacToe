@@ -72,6 +72,7 @@ function colorpicker(str) {
     (cells[0] == str && cells[4] == str && cells[8] == str) ||
     (cells[2] == str && cells[4] == str && cells[6] == str)
   ) {
+    visibility();
     return true;
   }
 }
@@ -134,4 +135,17 @@ function playagain() {
   player1.won = false;
   player2.won = false;
   document.getElementById("play").style.visibility = "hidden";
+  document.getElementById("invis").style.width = "0";
+  document.getElementById("invis").style.height = "0";
+}
+function visibility() {
+  document.getElementById("invis").animate(
+    [
+      { width: "0", height: "0" },
+      { width: "375px", height: "375px" },
+    ],
+    { duration: 400 }
+  );
+  document.getElementById("invis").style.width = "375px";
+  document.getElementById("invis").style.height = "375px";
 }
