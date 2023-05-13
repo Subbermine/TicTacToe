@@ -16,7 +16,8 @@ body {
 }
 img{
   position: absolute;
-  width: 375px;
+  width: 400px;
+  left:-15px;
   display: none;
 }
 .element:active{
