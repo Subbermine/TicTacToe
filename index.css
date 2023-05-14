@@ -18,12 +18,12 @@ body {
   overflow: hidden;
   position: absolute;
   width: 5px;
-  height: 5px;
+  height: 375px;
 }
 img{
   position: absolute;
   width: 400px;
-  left:-25px;
+  left:-15px;
   top:170px;
   display: none;
 }

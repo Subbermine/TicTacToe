@@ -9,6 +9,7 @@ let player1 = new player();
 let player2 = new player();
 var cells = [];
 var image = "red";
+var rotate = 0;
 function player_turn(a) {
   //player 1
   if (player1.turn == player2.turn) {
@@ -72,39 +73,42 @@ function colorpicker(str) {
     (cells[0] == str && cells[4] == str && cells[8] == str) ||
     (cells[2] == str && cells[4] == str && cells[6] == str)
   ) {
-    visibility();
     return true;
   }
 }
 function decider(str) {
+  document.getElementById(image).style.display = "inline-block";
   if (cells[0] == str && cells[1] == str && cells[2] == str) {
-    document.getElementById(image).style.display = "inline-block";
-    document.getElementById(image).style.top = "50px";
+    document.getElementById(image).style.top = "45px";
   } else if (cells[3] == str && cells[4] == str && cells[5] == str) {
-    document.getElementById(image).style.top = "170px";
-    document.getElementById(image).style.display = "inline-block";
   } else if (cells[6] == str && cells[7] == str && cells[8] == str) {
-    document.getElementById(image).style.top = "290px";
-    document.getElementById(image).style.display = "inline-block";
+    document.getElementById(image).style.top = "295px";
   } else if (cells[0] == str && cells[3] == str && cells[6] == str) {
     document.getElementById(image).style.transform = "rotate(90deg)";
-    document.getElementById(image).style.left = "-115px";
-    document.getElementById(image).style.display = "inline-block";
+    rotate = 90;
+    document.getElementById(image).style.top = "155px";
+    document.getElementById(image).style.left = "-135px";
   } else if (cells[1] == str && cells[4] == str && cells[7] == str) {
     document.getElementById(image).style.transform = "rotate(90deg)";
-    document.getElementById(image).style.left = "10px";
-    document.getElementById(image).style.display = "inline-block";
+    rotate = 90;
+    document.getElementById(image).style.top = "155px";
+    document.getElementById(image).style.left = "-15px";
   } else if (cells[2] == str && cells[5] == str && cells[8] == str) {
     document.getElementById(image).style.transform = "rotate(90deg)";
-    document.getElementById(image).style.left = "135px";
-    document.getElementById(image).style.display = "inline-block";
+    rotate = 90;
+    document.getElementById(image).style.top = "155px";
+    document.getElementById(image).style.left = "115px";
   } else if (cells[0] == str && cells[4] == str && cells[8] == str) {
     document.getElementById(image).style.transform = "rotate(45deg)";
-    document.getElementById(image).style.display = "inline-block";
+    rotate = 45;
+    document.getElementById(image).style.top = "155px";
+    document.getElementById(image).style.left = "-15px";
   } else if (cells[2] == str && cells[4] == str && cells[6] == str) {
     document.getElementById(image).style.transform = "rotate(135deg)";
-    document.getElementById(image).style.display = "inline-block";
+    rotate = 135;
+    document.getElementById(image).style.top = "155px";
   }
+  visibility();
 }
 function won(s) {
   if (s == "Player1") {
@@ -136,16 +140,27 @@ function playagain() {
   player2.won = false;
   document.getElementById("play").style.visibility = "hidden";
   document.getElementById("invis").style.width = "0";
-  document.getElementById("invis").style.height = "0";
+  rotate -= 2 * rotate;
+  document.getElementById(image).style.transform = "rotate(" + rotate + ")";
+  rotate = 0;
 }
 function visibility() {
-  document.getElementById("invis").animate(
-    [
-      { width: "0", height: "0" },
-      { width: "375px", height: "375px" },
-    ],
-    { duration: 400 }
-  );
-  document.getElementById("invis").style.width = "375px";
-  document.getElementById("invis").style.height = "375px";
+  if (rotate == 90) {
+    document.getElementById("invis").style.top = 5;
+    document.getElementById("invis").style.height = 0;
+    document.getElementById("invis").style.width = "375px";
+    document
+      .getElementById("invis")
+      .animate([{ height: "0" }, { height: "375px" }], {
+        duration: 400,
+      });
+    document.getElementById("invis").style.height = "375px";
+  } else {
+    document
+      .getElementById("invis")
+      .animate([{ width: "0" }, { width: "375px" }], {
+        duration: 400,
+      });
+    document.getElementById("invis").style.width = "375px";
+  }
 }
