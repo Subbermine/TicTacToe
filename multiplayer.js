@@ -149,9 +149,9 @@ function playagain() {
   player2.won = false;
   document.getElementById("play").style.visibility = "hidden";
   document.getElementById("invis").style.width = "0";
-  rotate -= 2 * rotate;
-  document.getElementById(image).style.transform = "rotate(" + rotate + ")";
-  rotate = 0;
+  document.getElementById("main").style.display = "none";
+  document.getElementById("inner").style.display = "none";
+  document.getElementById(image).style.transform = "rotate(0)";
 }
 function visibility() {
   if (rotate == 90) {
