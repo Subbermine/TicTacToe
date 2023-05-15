@@ -20,6 +20,26 @@ body {
   width: 5px;
   height: 375px;
 }
+#main{
+  background-color: #6f92a3;
+  height: 375px;
+  width: 375px;
+  position: absolute;
+  opacity: .4;
+  display: none;
+}
+#inner{
+  display: none;
+  background-color: #8ea7e9;
+   opacity: .9;
+   position: absolute;
+   width: 375px;
+   text-align: center;
+   line-height: 80px;
+   height: 80px;
+   font-weight: bolder;
+   color: black;
+}
 img{
   position: absolute;
   width: 400px;

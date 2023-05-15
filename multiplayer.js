@@ -117,6 +117,15 @@ function won(s) {
   if (s == "Player2") {
     document.getElementById(s).innerHTML = `${s}: ${++player2.gameswon}`;
   }
+  document.getElementById("inner").innerHTML = `${s} won!`;
+  document.getElementById("inner").style.display = "inline-block";
+  document.getElementById("main").style.display = "inline-block";
+  document
+    .getElementById("main")
+    .animate([{ opacity: 0 }, { opacity: 0.4 }], { duration: 200 });
+  document
+    .getElementById("inner")
+    .animate([{ opacity: 0 }, { opacity: 0.9 }], { duration: 200 });
   for (let index = 0; index < 9; index++) {
     document.getElementById(index).disabled = true;
     document.getElementById(index).style.cursor = "initial";
