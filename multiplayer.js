@@ -24,13 +24,6 @@ function player_turn(a) {
       image = "red";
       decider("X");
     }
-    document
-      .getElementById("body")
-      .animate(
-        [{ "background-color": "#6f92a3" }, { "background-color": "#a36f6f" }],
-        { duration: 400 }
-      );
-    document.getElementById("body").style.backgroundColor = "#a36f6f";
   }
   //player 2
   else {
@@ -45,7 +38,6 @@ function player_turn(a) {
       image = "blue";
       decider("O");
     }
-    document.getElementById("body").style.backgroundColor = "#6f92a3";
   }
   document.getElementById(a).setAttribute("disabled", "");
   document.getElementById(a).style.cursor = "initial";
@@ -55,6 +47,15 @@ function player_turn(a) {
     player1.won = colorpicker("X");
     if (player1.won) won("Player1");
     else {
+      document.getElementById("inner").style.display = "inline-block";
+      document.getElementById("main").style.display = "inline-block";
+      document.getElementById("inner").innerHTML = "Draw!";
+      document
+        .getElementById("main")
+        .animate([{ opacity: 0 }, { opacity: 0.4 }], { duration: 400 });
+      document
+        .getElementById("inner")
+        .animate([{ opacity: 0 }, { opacity: 0.9 }], { duration: 400 });
       document.getElementById("play").style.visibility = "visible";
       document
         .getElementById("play")
@@ -80,7 +81,6 @@ function decider(str) {
   document.getElementById(image).style.display = "inline-block";
   if (cells[0] == str && cells[1] == str && cells[2] == str) {
     document.getElementById(image).style.top = "45px";
-  } else if (cells[3] == str && cells[4] == str && cells[5] == str) {
   } else if (cells[6] == str && cells[7] == str && cells[8] == str) {
     document.getElementById(image).style.top = "295px";
   } else if (cells[0] == str && cells[3] == str && cells[6] == str) {
