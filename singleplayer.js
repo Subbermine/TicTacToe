@@ -79,7 +79,6 @@ function player_turn(id) {
       decider("X");
       won("player");
     } else {
-      document.getElementById("header").innerHTML = "Draw!";
       document.getElementById("play").style.visibility = "visible";
       document
         .getElementById("play")
@@ -241,6 +240,7 @@ function playagain() {
   comp.won = false;
   document.getElementById("play").style.visibility = "hidden";
   document.getElementById("invis").style.width = "0";
+  document.getElementById("invis").style.height = "375px";
   document.getElementById("main").style.display = "none";
   document.getElementById("inner").style.display = "none";
   document.getElementById(image).style.transform = "rotate(0)";
